@@ -1,0 +1,65 @@
+\documentclass[11pt,a4paper]{report}
+\usepackage[utf8]{inputenc}
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+\usepackage{tocbibind}
+\usepackage[titletoc]{appendix}
+\usepackage[hidelinks]{hyperref}
+
+\usepackage[backend=bibtex,style=ieee,sorting=none]{biblatex}
+\addbibresource{sources/library} %change to your .bib file
+
+\usepackage{parskip} %removes paragraph indentation
+
+\usepackage{listings} %For code in appendix
+\lstset
+{ %Formatting for code in appendix
+    language=Matlab,
+    basicstyle=\footnotesize,
+    numbers=left,
+    stepnumber=1,
+    showstringspaces=false,
+    tabsize=1,
+    breaklines=true,
+    breakatwhitespace=false,
+}
+
+\input{researchTitlePage}
+
+%---------------------------------------------
+%				END OF PREAMBLE
+%---------------------------------------------
+
+\begin{document}
+\AddToShipoutPicture*{\nwuswoosh}
+\nwutitlepage	{Research title}
+				{\studentInfo{Initials and surname}{Student number}}
+				{\researchInfo	{Dissertation}{partial}{Magister Scientiae}{Computer Science and Information Systems}{Potchefstroom}	}
+				{\supervisorInfo	{Dr. Jekyll}	{Mr. Hyde}}
+				{December 2017}
+%}%end bracket for font change
+\clearpage	
+
+\input{frontmatter}
+
+\input{chapters/ch1}
+
+\input{chapters/ch2}
+
+\input{chapters/ch3}
+
+\input{chapters/ch4}
+
+\input{chapters/ch5}
+
+\begingroup
+	\setlength{\emergencystretch}{4em}
+	\printbibliography[heading=bibintoc]
+\endgroup
+
+\begin{appendices}
+\input{appendices/appendixA}
+\input{appendices/appendixB}
+\end{appendices}
+
+\end{document}
+

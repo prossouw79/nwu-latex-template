@@ -1,0 +1,52 @@
+\usepackage{eso-pic}
+\usepackage{graphicx}
+\usepackage{enumitem}  
+\usepackage{calc}
+
+
+\newcommand{\studentInfo}[2]{
+\begin{Large}
+\textbf{#1}\\
+\textbf{#2}\\
+\end{Large}
+}
+
+\newcommand{\researchInfo}[5]{
+
+{\Large {#1} submitted in {#2} fullfillment of the requirements for the degree {#3} in {#4} at the {#5} Campus of the North-West University}
+
+}
+
+\newcommand{\supervisorInfo}[2]{
+\begin{large}
+ \begin{description}[leftmargin=2cm,labelwidth=\widthof{\bfseries The longest label}]
+\item[Supervisor:] {#1}
+\item[Co-supervisor:] {#2}
+\end{description}
+ \end{large} 
+}
+
+\newcommand{\nwutitlepage}[5]{	
+\begin{center}
+\thispagestyle{empty} %page number not printed
+\Huge{\textbf{#1}}\\
+\vspace*{3cm}
+{#2}
+\vspace*{3cm}
+{#3}
+\vspace*{4cm}
+{#4}
+\end{center}
+\vspace*{3cm}
+\flushleft\large{#5}
+}
+
+\newcommand\nwuswoosh{%
+\put(0,0){%
+\parbox[b][\paperheight]{\paperwidth}{%
+\vfill
+\centering
+\includegraphics[width=\paperwidth,height=\paperheight,%
+keepaspectratio]{swoosh.jpg}%
+\vfill
+}}}

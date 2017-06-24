@@ -1,0 +1,45 @@
+%USAGE: 
+%		\input{nwuassignment} %include this file
+%		\begin{document}
+%		\AddToShipoutPicture*{\nwuswoosh} %NB! Must be immediately after \begin{document} line
+%		\nwutitlepage{Potchefstroom/Vaal-Driehoek/Mafikeng}{School Name}{Group/Student}{Assignment name}{Subject name}
+
+\usepackage{eso-pic}
+\usepackage{graphicx}
+
+\newcommand{\rb}{%
+	\par%
+    \rule{4cm}{0.5pt}\\
+    \vspace{0.5cm}
+    \par%
+}
+
+\newcommand{\nwutitlepage}[7]{%
+	\thispagestyle{empty} %page number not printed
+    \newgeometry{left=2cm,bottom=8cm,right=2cm,top=2cm}%
+	\begin{center}
+	    					\rb%  
+	\begin{Huge}
+	North-West University\\
+	#1 Campus\\
+	Faculty of #2\\
+	\end{Huge}			\rb%
+						\rb%
+	\LARGE{#3}			\rb%
+	\LARGE{#4}			\rb%
+    \LARGE{#5}			\rb%
+    	\LARGE{#6}			\rb%  
+    	\vfill
+	\flushleft{\LARGE{Date Submitted: #7}}
+	\end{center}%
+}
+
+\newcommand\nwuswoosh{%
+\put(0,0){%
+\parbox[b][\paperheight]{\paperwidth}{%
+\vfill
+\centering
+\includegraphics[width=\paperwidth,height=\paperheight,%
+keepaspectratio]{swoosh.jpg}%
+\vfill
+}}}
